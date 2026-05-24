@@ -38,12 +38,12 @@ The implementation proves:
 
 ```mermaid
 flowchart LR
-    A[AI or system proposes action] --> B[PFC-style boundary evaluates admissibility]
-    B --> C[Signed receipt]
-    C --> D[Verifier validates signature, hashes, policy, and time window]
+    A["AI or system proposes action"] --> B["PFC-style boundary evaluates admissibility"]
+    B --> C["Signed receipt"]
+    C --> D["Verifier validates signature, hashes, policy, and time window"]
     D --> E{Verdict}
-    E -->|ALLOW| F[Bounded effect may proceed outside this proof]
-    E -->|DENY| G[Action refused]
+    E -->|ALLOW| F["Bounded effect may proceed outside this proof"]
+    E -->|DENY| G["Action refused"]
 ```
 
 ## Execution-boundary model
@@ -73,12 +73,12 @@ Default behavior is deny. An action is admitted only when the actor is authorize
 “Receipt ≠ log entry.
 A receipt is portable cryptographic proof that a specific action was admitted or refused under a defined policy, actor, context, and time window.”
 
-Logs describe what a system observed or recorded. A receipt is an admission artifact produced before effect. It is signed, portable, and independently verifiable.
-
 | Model | Sequence | Decision point |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | Traditional agent systems | `proposal -> tool call -> logs` | After or during effect |
 | PFC-style execution boundary | `proposal -> evaluation -> signed receipt -> verification -> bounded effect or refusal` | Before effect |
+
+Logs describe what a system observed or recorded. A receipt is an admission artifact produced before effect. It is signed, portable, and independently verifiable.
 
 ## Sample signed receipt JSON
 
