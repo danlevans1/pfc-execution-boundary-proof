@@ -36,14 +36,21 @@ The implementation proves:
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    A["AI or system proposes action"] --> B["PFC-style boundary evaluates admissibility"]
-    B --> C["Signed receipt"]
-    C --> D["Verifier validates signature, hashes, policy, and time window"]
-    D --> E{Verdict}
-    E -->|ALLOW| F["Bounded effect may proceed outside this proof"]
-    E -->|DENY| G["Action refused"]
+```text
+AI/system proposal
+        |
+        v
+PFC-style boundary evaluation
+        |
+        v
+Signed receipt
+        |
+        v
+Verifier checks signature, hashes, policy, and time window
+        |
+        +--> ALLOW -> bounded effect may proceed outside this proof
+        |
+        +--> DENY  -> action refused
 ```
 
 ## Execution-boundary model
