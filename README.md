@@ -1,7 +1,5 @@
 # PFC Execution Boundary Proof
 
-[![CI](https://github.com/danevans/pfc-execution-boundary-proof/actions/workflows/ci.yml/badge.svg)](https://github.com/danevans/pfc-execution-boundary-proof/actions/workflows/ci.yml)
-
 Public proof surface for PFC-style execution-boundary governance and signed runtime admission receipts.
 
 This repository demonstrates deterministic admission control before an action can bind consequence. It is intentionally narrow: no production adapters, no deployment authority, no network mutation, no credential access, and no proprietary PFC internals.
