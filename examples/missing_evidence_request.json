@@ -1,0 +1,34 @@
+{
+  "action": {
+    "action_id": "act-missing-evidence-001",
+    "action_type": "deploy.preview",
+    "actor_id": "agent:release-bot",
+    "scope": "environment:preview",
+    "payload": {
+      "artifact_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+      "environment": "preview"
+    },
+    "context": {
+      "observed_at": "2026-05-24T12:00:00Z",
+      "source": "demo-fixture"
+    },
+    "evidence": {
+      "change_ticket": "DEMO-1003"
+    },
+    "requested_at": "2026-05-24T12:01:00Z",
+    "not_before": "2026-05-24T12:00:00Z",
+    "not_after": "2026-05-24T12:05:00Z"
+  },
+  "policy": {
+    "policy_id": "pfc-public-proof-policy",
+    "policy_version": "2026-05-24.1",
+    "authorized_actors": ["agent:release-bot", "system:payment-controller"],
+    "allowed_action_types": ["deploy.preview", "payment.release"],
+    "allowed_scopes": ["environment:preview", "payment:escrow-release"],
+    "required_evidence": ["change_ticket", "risk_review"],
+    "valid_from": "2026-05-24T00:00:00Z",
+    "valid_until": "2026-05-25T00:00:00Z",
+    "context_max_age_seconds": 300,
+    "receipt_ttl_seconds": 300
+  }
+}
